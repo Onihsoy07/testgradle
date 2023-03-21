@@ -20,7 +20,7 @@ public class ShortUrlController {
     @Value("${test.toy.short.url.id}")
     private String CLIENT_ID;
 
-    @Value("${test.toy.short.url.id}")
+    @Value("${test.toy.short.url.secret}")
     private String ClIENT_SECRET;
 
     ShortUrlServiceImpl shortUrlService;

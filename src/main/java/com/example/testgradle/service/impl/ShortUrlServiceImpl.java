@@ -3,6 +3,7 @@ package com.example.testgradle.service.impl;
 import com.example.testgradle.data.dto.NaverUriDto;
 import com.example.testgradle.data.dto.ShortUrlDto;
 import com.example.testgradle.data.entity.ShortUrlEntity;
+import com.example.testgradle.data.repository.ShortUrlRepository;
 import com.example.testgradle.service.ShortUrlService;
 import java.net.URI;
 import java.util.Arrays;
@@ -15,6 +16,12 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @Service
 public class ShortUrlServiceImpl implements ShortUrlService {
+
+    ShortUrlRepository shortUrlRepository;
+
+    ShortUrlServiceImpl(ShortUrlRepository shortUrlRepository) {
+        this.shortUrlRepository = shortUrlRepository;
+    }
 
     private Logger LOGGER = LoggerFactory.getLogger(ShortUrlServiceImpl.class);
 
@@ -32,6 +39,7 @@ public class ShortUrlServiceImpl implements ShortUrlService {
         shortUrlEntity.setOrgUrl(orgUrl);
         shortUrlEntity.setUrl(shortUrl);
         shortUrlEntity.setHash(hash);
+        shortUrlRepository.save(shortUrlEntity);
 
         ShortUrlDto shortUrlDto = new ShortUrlDto(orgUrl, shortUrl);
         return shortUrlDto;
@@ -58,7 +66,7 @@ public class ShortUrlServiceImpl implements ShortUrlService {
     }
 
     private ResponseEntity<NaverUriDto> requestShortUrl(String clientId, String clientSecret, String originalUrl) {
-        LOGGER.info("[requestShortUrl] client ID : ***, client Secret : ***, original URL : {}", originalUrl);
+        LOGGER.info("[requestShortUrl] client ID : {}, client Secret : {}, original URL : {}", clientId, clientSecret, originalUrl);
 
         URI uri = UriComponentsBuilder
             .fromUriString("https://openapi.naver.com")
@@ -79,7 +87,9 @@ public class ShortUrlServiceImpl implements ShortUrlService {
         RestTemplate restTemplate = new RestTemplate();
 
         LOGGER.info("[requestShortUrl] request by restTemplate");
-        ResponseEntity<NaverUriDto> responseEntity = restTemplate.exchange(uri, HttpMethod.GET, entity, NaverUriDto.class);
+        ResponseEntity<NaverUriDto> responseEntity = null;
+        try{ responseEntity = restTemplate.exchange(uri, HttpMethod.GET, entity, NaverUriDto.class); }
+        catch (Exception e) { e.printStackTrace(); }
 
         LOGGER.info("[requestShortUrl] request has been successfully complete.");
 
