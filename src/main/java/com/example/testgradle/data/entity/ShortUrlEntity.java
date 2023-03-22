@@ -19,7 +19,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 @Table(name = "short_url")
-public class ShortUrlEntity extends BaseEnriry{
+public class ShortUrlEntity extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

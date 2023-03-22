@@ -7,6 +7,7 @@ import com.example.testgradle.data.repository.ShortUrlRepository;
 import com.example.testgradle.service.ShortUrlService;
 import java.net.URI;
 import java.util.Arrays;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.*;
@@ -47,7 +48,31 @@ public class ShortUrlServiceImpl implements ShortUrlService {
 
     @Override
     public ShortUrlDto getShortUrl(String clientId, String clientSecret, String originalUrl) {
-        return null;
+
+        LOGGER.info("[getShortUrl] request data : {}", originalUrl);
+        Optional<ShortUrlEntity> res = shortUrlRepository.findByOrgUrl(originalUrl);
+
+        String orgUrl;
+        String shortUrl;
+
+        LOGGER.info("[getShortUrl] getEntity : {}", res);
+
+        if(res.isEmpty()) {
+            LOGGER.info("[getShortUrl] No Entity in Datebase.");
+            ResponseEntity<NaverUriDto> responseEntity = requestShortUrl(clientId, clientSecret, originalUrl);
+
+            orgUrl = responseEntity.getBody().getResult().getOrgUrl();
+            shortUrl = responseEntity.getBody().getResult().getUrl();
+
+        } else {
+            orgUrl = res.get().getOrgUrl();
+            shortUrl = res.get().getUrl();
+        }
+
+        ShortUrlDto shortUrlDto = new ShortUrlDto(orgUrl, shortUrl);
+
+        LOGGER.info("[getShortUrl] Responese DTO : {}", shortUrlDto.toString());
+        return shortUrlDto;
     }
 
     @Override
