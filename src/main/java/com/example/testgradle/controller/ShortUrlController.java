@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,9 +39,14 @@ public class ShortUrlController {
         return shortUrlService.generateShortUrl(CLIENT_ID, ClIENT_SECRET, originalUrl);
     }
 
-    @GetMapping("/{orgUrl}")
-    public ShortUrlDto getShortUrl(@PathVariable final String orgUrl) {
+    @GetMapping
+    public ShortUrlDto getShortUrl(String orgUrl) {
         return shortUrlService.getShortUrl(CLIENT_ID, ClIENT_SECRET, orgUrl);
+    }
+
+    @DeleteMapping
+    public ShortUrlDto deleteUrl(String url) {
+        return shortUrlService.deleteByUrl(url);
     }
 
 

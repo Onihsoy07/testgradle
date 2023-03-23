@@ -15,14 +15,12 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ShortUrlController.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ShortUrlServiceImpl.class.uniqueId1" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testgradle/TestgradleApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/testgradle/TestgradleApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testgradle/controller/ShortUrlController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/testgradle/controller/ShortUrlController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testgradle/data/entity/BaseEnriry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/testgradle/data/entity/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testgradle/data/entity/ShortUrlEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/testgradle/data/entity/ShortUrlEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testgradle/data/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/testgradle/data/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testgradle/data/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/testgradle/data/entity/BaseEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testgradle/data/repository/ShortUrlRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/testgradle/data/repository/ShortUrlRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testgradle/service/ShortUrlService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/testgradle/service/ShortUrlService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testgradle/service/impl/ShortUrlServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/testgradle/service/impl/ShortUrlServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,13 +55,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/JAVA/포토앨범 웹앱 프로젝트/photoalbum"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JAVA/포토앨범 웹앱 프로젝트/photoalbum&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="TestgradleApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.testgradle.TestgradleApplication" />
@@ -100,7 +98,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/testgradle/TestgradleApplication.java</url>
-          <line>9</line>
+          <line>11</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

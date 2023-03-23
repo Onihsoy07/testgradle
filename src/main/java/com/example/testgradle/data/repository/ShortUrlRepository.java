@@ -11,4 +11,6 @@ public interface ShortUrlRepository extends JpaRepository<ShortUrlEntity, Long> 
 
     Optional<ShortUrlEntity> findByOrgUrl(String orgUrl);
 
+    Optional<ShortUrlEntity> findByUrl(String url);
+
 }

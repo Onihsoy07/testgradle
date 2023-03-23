@@ -4,6 +4,7 @@ import com.example.testgradle.data.dto.NaverUriDto;
 import com.example.testgradle.data.dto.ShortUrlDto;
 import com.example.testgradle.data.entity.ShortUrlEntity;
 import com.example.testgradle.data.repository.ShortUrlRepository;
+import com.example.testgradle.mapping.ShorturlMapping;
 import com.example.testgradle.service.ShortUrlService;
 import java.net.URI;
 import java.util.Arrays;
@@ -81,13 +82,34 @@ public class ShortUrlServiceImpl implements ShortUrlService {
     }
 
     @Override
-    public ShortUrlDto deleteByShortUrl(String shortlUrl) {
-        return null;
+    public ShortUrlDto deleteByUrl(String url) {
+
+        ShortUrlEntity shortUrlEntity;
+        if(url.contains("me2.do")) { shortUrlEntity = deleteByShortUrl(url); }
+        else { shortUrlEntity = deleteByOriginalUrl(url); }
+
+        shortUrlRepository.delete(shortUrlEntity);
+        LOGGER.info("[deleteByUrl] Entity is deleted");
+
+        return ShorturlMapping.convertToDto(shortUrlEntity);
     }
 
-    @Override
-    public ShortUrlDto deleteByOriginalUrl(String originalUrl) {
-        return null;
+    private ShortUrlEntity deleteByOriginalUrl(String url) {
+        Optional<ShortUrlEntity> res = shortUrlRepository.findByOrgUrl(url);
+        if(res.isEmpty()) {
+            LOGGER.info("[deleteByUrl] No Database in Entity");
+            throw new IllegalArgumentException(String.format("%s의 url을 찾을 수 없습니다.", url));
+        }
+        return res.get();
+    }
+
+    private ShortUrlEntity deleteByShortUrl(String url) {
+        Optional<ShortUrlEntity> res = shortUrlRepository.findByUrl(url);
+        if(res.isEmpty()) {
+            LOGGER.info("[deleteByUrl] No Database in Entity");
+            throw new IllegalArgumentException(String.format("%s의 url을 찾을 수 없습니다.", url));
+        }
+        return res.get();
     }
 
     private ResponseEntity<NaverUriDto> requestShortUrl(String clientId, String clientSecret, String originalUrl) {
