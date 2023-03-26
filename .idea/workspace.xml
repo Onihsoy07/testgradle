@@ -17,11 +17,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testgradle/TestgradleApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/testgradle/TestgradleApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testgradle/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/testgradle/controller/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testgradle/controller/ShortUrlController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/testgradle/controller/ShortUrlController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testgradle/data/dto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/testgradle/data/dto/ProductDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testgradle/data/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/testgradle/data/entity/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testgradle/data/repository/ShortUrlRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/testgradle/data/repository/ShortUrlRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testgradle/service/ShortUrlService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/testgradle/service/ShortUrlService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testgradle/service/impl/ShortUrlServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/testgradle/service/impl/ShortUrlServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testgradle/data/entity/ProductEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/testgradle/data/entity/ProductEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testgradle/mapping/ProductMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/testgradle/mapping/ProductMapping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/testgradle/controller/ProductControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/testgradle/controller/ProductControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +64,7 @@
     &quot;last_opened_file_path&quot;: &quot;D:/JAVA/포토앨범 웹앱 프로젝트/photoalbum&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.TestgradleApplication">
     <configuration name="TestgradleApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.testgradle.TestgradleApplication" />
       <module name="testgradle.main" />
@@ -76,8 +78,56 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProductControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.testgradle.controller.ProductControllerTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ProductControllerTest.getProductTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.testgradle.controller.ProductControllerTest.getProductTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ProductControllerTest" />
+        <item itemvalue="Gradle.ProductControllerTest.getProductTest" />
         <item itemvalue="Application.TestgradleApplication" />
       </list>
     </recent_temporary>
@@ -92,16 +142,5 @@
       <updated>1679318153634</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/testgradle/TestgradleApplication.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

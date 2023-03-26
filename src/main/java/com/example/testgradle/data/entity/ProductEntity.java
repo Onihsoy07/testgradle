@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @Builder
 @Table(name = "product", schema = "product", uniqueConstraints = {@UniqueConstraint(columnNames = "product_id")})
-public class ProductEntity{
+public class ProductEntity extends BaseEntity {
 
     @Id
     @NotNull

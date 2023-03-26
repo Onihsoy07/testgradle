@@ -30,8 +30,8 @@ public class ProductController {
         ProductDto res = productServiceImpl.creatProduct(productDto);
 
         LOGGER.info(
-                "[createProduct] Response >> productId : {}, priductName : {}, productPrice : {}, productStock : {}",
-                res.getProductId(), res.getProductName(), res.getProductPrice(), res.getProductStock());
+            "[createProduct] Response >> productId : {}, priductName : {}, productPrice : {}, productStock : {}",
+            res.getProductId(), res.getProductName(), res.getProductPrice(), res.getProductStock());
 
         return new ResponseEntity<>(res, HttpStatus.OK);
     }

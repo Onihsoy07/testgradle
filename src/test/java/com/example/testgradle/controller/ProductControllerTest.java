@@ -38,16 +38,16 @@ public class ProductControllerTest {
         String productId = "12315";
 
         given(productService.getProduct(productId)).willReturn(
-                new ProductDto("15871", "pen", 5000, 2000));
+            new ProductDto("15871", "pen", 5000, 2000));
 
         mockMvc.perform(
                 get("/api/v1/product-api/product/" + productId))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.productId").exists())
-                .andExpect(jsonPath("$.productName").exists())
-                .andExpect(jsonPath("$.productPrice").exists())
-                .andExpect(jsonPath("$.productStock").exists())
-                .andDo(print());
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.productId").exists())
+            .andExpect(jsonPath("$.productName").exists())
+            .andExpect(jsonPath("$.productPrice").exists())
+            .andExpect(jsonPath("$.productStock").exists())
+            .andDo(print());
 
         verify(productService).getProduct(productId);
     }
@@ -56,7 +56,7 @@ public class ProductControllerTest {
     @DisplayName("Product 데이터 생성 테스트")
     void createProductTest() throws Exception {
         given(productService.creatProduct(new ProductDto("15871", "pen", 5000, 1557))).willReturn(
-                new ProductDto("15871", "pen", 5000, 1557));
+            new ProductDto("15871", "pen", 5000, 1557));
 
         ProductDto productDto = ProductDto.builder().productId("15872").productName("pen").productPrice(5000).productStock(1557).build();
         Gson gson = new Gson();
@@ -66,14 +66,14 @@ public class ProductControllerTest {
 
         mockMvc.perform(
                 post("/api/v1/product-api/product")
-                        .content(content)
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.productId").exists())
-                .andExpect(jsonPath("$.productName").exists())
-                .andExpect(jsonPath("$.productPrice").exists())
-                .andExpect(jsonPath("$.productStock").exists())
-                .andDo(print());
+                    .content(content)
+                    .contentType(MediaType.APPLICATION_JSON))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.productId").exists())
+            .andExpect(jsonPath("$.productName").exists())
+            .andExpect(jsonPath("$.productPrice").exists())
+            .andExpect(jsonPath("$.productStock").exists())
+            .andDo(print());
 
         verify(productService).creatProduct(new ProductDto("15871", "pen", 5000, 1557));
 

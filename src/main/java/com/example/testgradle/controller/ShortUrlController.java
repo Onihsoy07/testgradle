@@ -26,10 +26,10 @@ public class ShortUrlController {
     @Value("${test.toy.short.url.secret}")
     private String ClIENT_SECRET;
 
-    ShortUrlServiceImpl shortUrlService;
+    ShortUrlService shortUrlService;
 
     @Autowired
-    ShortUrlController(ShortUrlServiceImpl shortUrlService) {
+    ShortUrlController(ShortUrlService shortUrlService) {
         this.shortUrlService = shortUrlService;
     }
 
