@@ -1,10 +1,12 @@
 package com.example.testgradle.controller;
 
 import com.example.testgradle.data.dto.ProductDto;
+import com.example.testgradle.service.ProductService;
 import com.example.testgradle.service.impl.ProductServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,10 +15,14 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/v1/product-api")
-@RequiredArgsConstructor
 public class ProductController {
 
-    private final ProductServiceImpl productServiceImpl;
+    private ProductService productServiceImpl;
+
+    @Autowired
+    public ProductController(ProductService productService) {
+        this.productServiceImpl = productService;
+    }
 
     private final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
 

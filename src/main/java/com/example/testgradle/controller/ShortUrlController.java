@@ -29,7 +29,7 @@ public class ShortUrlController {
     ShortUrlService shortUrlService;
 
     @Autowired
-    ShortUrlController(ShortUrlService shortUrlService) {
+    public ShortUrlController(ShortUrlService shortUrlService) {
         this.shortUrlService = shortUrlService;
     }
 

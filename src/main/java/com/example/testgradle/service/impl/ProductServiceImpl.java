@@ -6,15 +6,21 @@ import com.example.testgradle.data.repository.ProductRepository;
 import com.example.testgradle.mapping.ProductMapping;
 import com.example.testgradle.service.ProductService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
 
-    private final ProductRepository productRepository;
+    private ProductRepository productRepository;
+
+    @Autowired
+    public ProductServiceImpl(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 
     public ProductDto getProduct(String productId) {
         Optional<ProductEntity> res = productRepository.findById(productId);
