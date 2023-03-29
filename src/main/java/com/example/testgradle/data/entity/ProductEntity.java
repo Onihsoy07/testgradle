@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "product", schema = "product", uniqueConstraints = {@UniqueConstraint(columnNames = "product_id")})
+@Table(name = "product_entity", schema = "product", uniqueConstraints = {@UniqueConstraint(columnNames = "product_id")})
 public class ProductEntity extends BaseEntity {
 
     @Id
